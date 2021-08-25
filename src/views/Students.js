@@ -5,7 +5,6 @@ import StudentsPage from '../components/StudentsPage';
 export default class Students extends Component {
     constructor() {
         super();
-        console.log("I was created")
         this.state = {
             students: []
         }
@@ -14,10 +13,10 @@ export default class Students extends Component {
     getStudents = () => {
         fetch("https://shohablog-django.herokuapp.com/api/")
         .then(res => res.json())
-        .then(data => {  //grab data from the json file
+        .then(data => { 
             console.log(data)
             this.setState({
-                students: data.students //change empty articles from constructor and replace to articles with data from json
+                students: data.students 
             })
         })
         .catch(error => console.log(error))
